@@ -18,5 +18,15 @@ interface UserDAO {
     @Query (value = "Select * from UserEntity order by age")
     fun getAllUsersWithAgeSort() : List<UserEntity>
 
+    @Query("DELETE FROM UserEntity")
+    fun deleteAll()
+
+    @Query("DELETE FROM UserEntity WHERE id = :id")
+    fun deleteByUserId(id: Int)
+
+
+
+
+
 
 }
